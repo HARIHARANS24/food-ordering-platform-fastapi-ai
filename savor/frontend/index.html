@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAVOR | Modern Food Ordering</title>
+    <meta name="description" content="Order fresh, bold, unforgettable food directly from SAVOR.">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header id="mainHeader">
+        <a href="index.html" class="logo">
+            <span class="logo-icon">🍅</span> SAVOR<span class="dot">.</span>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Menu</a></li>
+                <li><a href="about.html">Our Kitchen</a></li>
+                <li><a href="contact.html">Support</a></li>
+            </ul>
+        </nav>
+        <div class="header-actions">
+            <div class="cart-icon" id="cartIcon">
+                🛒 <span class="cart-count" id="cartCount">0</span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero -->
+        <section class="hero">
+            <div class="hero-bg"></div>
+            <div class="hero-grid"></div>
+
+            <!-- Floating emojis -->
+            <div class="hero-floating" style="left:5%;animation-duration:18s;animation-delay:0s;">🍕</div>
+            <div class="hero-floating" style="left:15%;animation-duration:22s;animation-delay:3s;">🌮</div>
+            <div class="hero-floating" style="left:30%;animation-duration:19s;animation-delay:6s;">🍔</div>
+            <div class="hero-floating" style="left:50%;animation-duration:25s;animation-delay:1s;">🥗</div>
+            <div class="hero-floating" style="left:65%;animation-duration:21s;animation-delay:8s;">🍜</div>
+            <div class="hero-floating" style="left:80%;animation-duration:17s;animation-delay:4s;">🧁</div>
+            <div class="hero-floating" style="left:90%;animation-duration:23s;animation-delay:2s;">🥩</div>
+
+            <div class="hero-content">
+                <div class="hero-badge">✦ Fresh Daily — Zero Compromise</div>
+                <h1>Savor Every<br><span class="highlight">Bold Bite</span></h1>
+                <p class="hero-desc">Locally sourced. Expertly crafted. Delivered to your door in under 30 minutes.</p>
+                <div class="hero-actions">
+                    <a href="#menuSection" class="btn btn-primary">Explore Menu →</a>
+                    <a href="about.html" class="btn btn-outline">Our Story</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-num">42<span>+</span></div>
+                        <div class="stat-label">Dishes</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-num">4.9<span>★</span></div>
+                        <div class="stat-label">Rating</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-num">30<span>min</span></div>
+                        <div class="stat-label">Delivery</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-num">12<span>k+</span></div>
+                        <div class="stat-label">Happy Customers</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Controls -->
+        <div class="menu-controls" id="menuSection">
+            <div class="search-row">
+                <div class="search-wrapper">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" id="searchInput" class="search-input"
+                        placeholder="Search dishes, ingredients...">
+                    <button class="search-clear" id="searchClear">✕</button>
+                </div>
+                <select id="sortSelect" class="sort-select">
+                    <option value="default">Sort: Default</option>
+                    <option value="price-asc">Price: Low to High</option>
+                    <option value="price-desc">Price: High to Low</option>
+                    <option value="name-asc">Name: A → Z</option>
+                    <option value="name-desc">Name: Z → A</option>
+                </select>
+                <div class="view-toggle">
+                    <button class="view-btn active" id="gridViewBtn" title="Grid view">⊞</button>
+                    <button class="view-btn" id="listViewBtn" title="List view">☰</button>
+                </div>
+            </div>
+            <div class="filter-row">
+                <span class="filter-label">Filter:</span>
+                <button class="filter-pill active" data-filter="all">✦ All</button>
+                <button class="filter-pill" data-filter="healthy foods">🥗 Healthy</button>
+                <button class="filter-pill" data-filter="fast foods">🍔 Fast Foods</button>
+                <button class="filter-pill" data-filter="foods">🍽️ Mains</button>
+                <button class="filter-pill" data-filter="beverages">🥤 Beverages</button>
+                <button class="filter-pill" data-filter="desserts">🍰 Desserts</button>
+                <button class="filter-pill" data-filter="snacks">🍟 Snacks</button>
+            </div>
+        </div>
+
+        <div class="results-info" id="resultsInfo"></div>
+
+        <!-- Menu -->
+        <section class="menu-section" id="menuContainer">
+            <div class="page-loader">
+                <div class="loader"></div>Loading menu...
+            </div>
+        </section>
+    </main>
+
+    <!-- Cart Drawer -->
+    <div class="overlay" id="overlay"></div>
+    <div class="cart-drawer" id="cartDrawer">
+        <div class="cart-header">
+            <h3>Your Cart 🛒</h3>
+            <button class="close-cart" id="closeCart">✕</button>
+        </div>
+        <div class="cart-items" id="cartItems"></div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span class="cart-total-label">Total</span>
+                <span class="cart-total-amount" id="cartTotal">$0.00</span>
+            </div>
+            <a href="checkout.html"><button class="btn btn-primary" style="width:100%;" id="checkoutBtn">Proceed to
+                    Checkout →</button></a>
+        </div>
+    </div>
+
+    <!-- Chat -->
+    <button class="chat-fab" id="chatFab">💬</button>
+    <div class="chat-window" id="chatWindow">
+        <div class="chat-header">
+            <div class="chat-header-info">
+                <div class="chat-avatar">🤖</div>
+                <div>
+                    <h3>Culinary Assistant</h3>
+                    <div class="chat-status"><span class="status-dot"></span> Online</div>
+                </div>
+            </div>
+            <button class="close-chat" id="closeChat">✕</button>
+        </div>
+        <div class="chat-messages" id="chatMessages"></div>
+        <div class="chat-input">
+            <input type="text" id="chatInput" placeholder="Ask about dishes, diet tips...">
+            <button id="sendChat">➔</button>
+        </div>
+    </div>
+
+    <div class="notification" id="notification"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAVOR | Our Kitchen</title>
+    <meta name="description" content="Learn about SAVOR, our fresh ingredients, and our culinary journey.">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header id="mainHeader">
+        <a href="index.html" class="logo">
+            <span class="logo-icon">🍅</span> SAVOR<span class="dot">.</span>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Menu</a></li>
+                <li><a href="about.html" class="active">Our Kitchen</a></li>
+                <li><a href="contact.html">Support</a></li>
+            </ul>
+        </nav>
+        <div class="header-actions">
+            <div class="cart-icon" id="cartIcon">🛒 <span class="cart-count" id="cartCount">0</span></div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero -->
+        <div class="about-hero">
+            <div class="about-hero-bg"></div>
+            <div class="about-hero-content fade-in-target">
+                <div class="about-eyebrow">✦ Est. 2019 — Madurai</div>
+                <h1>Cooking is Our<br><em>Love Language</em></h1>
+                <p>We started SAVOR with one simple belief: that great food has the power to transform an ordinary day
+                    into something remarkable. Every dish we create is a testament to that belief.</p>
+            </div>
+            <div class="about-visual fade-in-target" aria-hidden="true">
+                <div class="about-visual-card">🍅<span>FRESH</span></div>
+                <div class="about-visual-card">🌿<span>LOCAL</span></div>
+                <div class="about-visual-card">🔥<span>BOLD</span></div>
+                <div class="about-visual-card">⭐<span>4.9★</span></div>
+            </div>
+        </div>
+
+        <!-- Stats Bar -->
+        <div class="about-stats-bar fade-in-target">
+            <div class="about-stat">
+                <div class="about-stat-num">12,400+</div>
+                <div class="about-stat-label">Happy Customers</div>
+            </div>
+            <div class="about-stat">
+                <div class="about-stat-num">42</div>
+                <div class="about-stat-label">Signature Dishes</div>
+            </div>
+            <div class="about-stat">
+                <div class="about-stat-num">6</div>
+                <div class="about-stat-label">Years of Excellence</div>
+            </div>
+            <div class="about-stat">
+                <div class="about-stat-num">30min</div>
+                <div class="about-stat-label">Avg. Delivery Time</div>
+            </div>
+        </div>
+
+        <!-- Story -->
+        <section style="padding: 5rem 5%; max-width: 900px; margin: 0 auto;">
+            <div class="fade-in-target"
+                style="display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center; margin-bottom:4rem; flex-wrap:wrap;">
+                <div>
+                    <div class="section-eyebrow" style="text-align:left; margin-bottom:0.75rem;">Our Origin Story</div>
+                    <h2
+                        style="font-family:'Playfair Display',serif; font-size:2rem; color:var(--text); margin-bottom:1.25rem; line-height:1.2;">
+                        From a Tiny Kitchen<br><em style="color:var(--primary);">To Your Doorstep</em></h2>
+                    <p style="color:var(--text-muted); line-height:1.9; margin-bottom:1rem;">It all began in 2019 with a
+                        single pan, a rented apartment kitchen in Madurai, and an obsession with making food that tastes
+                        like it was cooked by someone who genuinely cares.</p>
+                    <p style="color:var(--text-muted); line-height:1.9;">Today, our team of 15 passionate cooks prepares
+                        every dish from scratch using ingredients sourced within 50km of our kitchen. No shortcuts. No
+                        compromises.</p>
+                </div>
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+                    <div
+                        style="background:var(--card-bg); border:1px solid var(--glass-border); border-radius:16px; padding:2rem; text-align:center;">
+                        <div style="font-size:2.5rem; margin-bottom:0.5rem;">🌾</div>
+                        <div style="font-size:0.8rem; color:var(--text-muted); letter-spacing:1px;">LOCALLY SOURCED
+                        </div>
+                    </div>
+                    <div
+                        style="background:var(--card-bg); border:1px solid var(--glass-border); border-radius:16px; padding:2rem; text-align:center; margin-top:1.5rem;">
+                        <div style="font-size:2.5rem; margin-bottom:0.5rem;">👨‍🍳</div>
+                        <div style="font-size:0.8rem; color:var(--text-muted); letter-spacing:1px;">CHEF-CRAFTED</div>
+                    </div>
+                    <div
+                        style="background:var(--card-bg); border:1px solid var(--glass-border); border-radius:16px; padding:2rem; text-align:center; margin-top:-1.5rem;">
+                        <div style="font-size:2.5rem; margin-bottom:0.5rem;">❤️</div>
+                        <div style="font-size:0.8rem; color:var(--text-muted); letter-spacing:1px;">MADE WITH LOVE</div>
+                    </div>
+                    <div
+                        style="background:var(--card-bg); border:1px solid var(--glass-border); border-radius:16px; padding:2rem; text-align:center;">
+                        <div style="font-size:2.5rem; margin-bottom:0.5rem;">🚀</div>
+                        <div style="font-size:0.8rem; color:var(--text-muted); letter-spacing:1px;">FAST DELIVERY</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Values -->
+        <section
+            style="background:var(--dark2); border-top:1px solid var(--glass-border); border-bottom:1px solid var(--glass-border);">
+            <div style="padding:5rem 5%;">
+                <div class="section-header fade-in-target">
+                    <div class="section-eyebrow">What We Stand For</div>
+                    <h2 class="section-title">Our Core Values</h2>
+                </div>
+                <div class="about-values" style="padding:0; margin-top:2rem;">
+                    <div class="value-card fade-in-target"
+                        style="--accent-grad: linear-gradient(90deg, var(--primary), #ff8c55);">
+                        <div class="value-icon">🌿</div>
+                        <div class="value-title">Farm-Fresh Always</div>
+                        <div class="value-desc">Every ingredient is handpicked from local farms daily. If it's not
+                            fresh, it doesn't make the cut — no exceptions, no substitutions.</div>
+                    </div>
+                    <div class="value-card fade-in-target"
+                        style="--accent-grad: linear-gradient(90deg, var(--secondary), #00c787);">
+                        <div class="value-icon">⚗️</div>
+                        <div class="value-title">Culinary Innovation</div>
+                        <div class="value-desc">We blend classical techniques with modern creativity. Our chefs are
+                            constantly experimenting to bring you flavors that surprise and delight.</div>
+                    </div>
+                    <div class="value-card fade-in-target"
+                        style="--accent-grad: linear-gradient(90deg, var(--accent), #ffb030);">
+                        <div class="value-icon">♻️</div>
+                        <div class="value-title">Zero Waste Promise</div>
+                        <div class="value-desc">From compostable packaging to precise portion control, we're committed
+                            to reducing our footprint one meal at a time.</div>
+                    </div>
+                    <div class="value-card fade-in-target"
+                        style="--accent-grad: linear-gradient(90deg, #8b5cf6, #c084fc);">
+                        <div class="value-icon">🤝</div>
+                        <div class="value-title">Community First</div>
+                        <div class="value-desc">We partner with local farmers, support neighborhood suppliers, and
+                            donate surplus food to community kitchens every week.</div>
+                    </div>
+                    <div class="value-card fade-in-target"
+                        style="--accent-grad: linear-gradient(90deg, #ec4899, #f43f5e);">
+                        <div class="value-icon">🎯</div>
+                        <div class="value-title">Precision in Every Bite</div>
+                        <div class="value-desc">Every dish is calibrated, tasted, and refined before it leaves our
+                            kitchen. Consistency is the hallmark of a great restaurant.</div>
+                    </div>
+                    <div class="value-card fade-in-target"
+                        style="--accent-grad: linear-gradient(90deg, #0ea5e9, #38bdf8);">
+                        <div class="value-icon">⚡</div>
+                        <div class="value-title">Speed Without Sacrifice</div>
+                        <div class="value-desc">Fast delivery means nothing if the food is cold or compromised. We've
+                            engineered our packaging to deliver hot, fresh, perfect every time.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team -->
+        <div class="about-team">
+            <div class="section-header fade-in-target">
+                <div class="section-eyebrow">The Humans Behind the Magic</div>
+                <h2 class="section-title">Meet Our Team</h2>
+            </div>
+            <div class="team-grid">
+                <div class="team-card fade-in-target">
+                    <div class="team-avatar" style="background:linear-gradient(135deg,#FF4D1C,#ff8c55);">R</div>
+                    <div class="team-name">Rajan Krishnan</div>
+                    <div class="team-role">Head Chef & Founder</div>
+                    <div class="team-bio">15 years of culinary mastery across 3 countries. His spice blends are
+                        legendary in Madurai.</div>
+                </div>
+                <div class="team-card fade-in-target">
+                    <div class="team-avatar" style="background:linear-gradient(135deg,#00E5A0,#00c787);">P</div>
+                    <div class="team-name">Priya Sundaram</div>
+                    <div class="team-role">Pastry Chef</div>
+                    <div class="team-bio">Self-taught genius behind our dessert menu. Her Chocolate Lava Cake has 5-star
+                        reviews across the board.</div>
+                </div>
+                <div class="team-card fade-in-target">
+                    <div class="team-avatar" style="background:linear-gradient(135deg,#FFD166,#ffb030);">A</div>
+                    <div class="team-name">Arjun Mehta</div>
+                    <div class="team-role">Sous Chef</div>
+                    <div class="team-bio">The architect of our fast foods menu. He turns a simple burger into an
+                        unforgettable experience.</div>
+                </div>
+                <div class="team-card fade-in-target">
+                    <div class="team-avatar" style="background:linear-gradient(135deg,#8b5cf6,#c084fc);">D</div>
+                    <div class="team-name">Divya Nair</div>
+                    <div class="team-role">Nutrition Expert</div>
+                    <div class="team-bio">Ensures our healthy menu options are genuinely nourishing — not just marketed
+                        that way.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="about-cta fade-in-target">
+            <h2>Ready to Taste the Difference?</h2>
+            <p>Every order is crafted with intention. Your next favorite meal is one click away.</p>
+            <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+                <a href="index.html" class="btn btn-primary">Order Now →</a>
+                <a href="contact.html" class="btn btn-outline">Get in Touch</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Cart Drawer -->
+    <div class="overlay" id="overlay"></div>
+    <div class="cart-drawer" id="cartDrawer">
+        <div class="cart-header">
+            <h3>Your Cart 🛒</h3>
+            <button class="close-cart" id="closeCart">✕</button>
+        </div>
+        <div class="cart-items" id="cartItems"></div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span class="cart-total-label">Total</span>
+                <span class="cart-total-amount" id="cartTotal">$0.00</span>
+            </div>
+            <a href="checkout.html"><button class="btn btn-primary" style="width:100%;">Proceed to Checkout
+                    →</button></a>
+        </div>
+    </div>
+
+    <!-- Chat -->
+    <button class="chat-fab" id="chatFab">💬</button>
+    <div class="chat-window" id="chatWindow">
+        <div class="chat-header">
+            <div class="chat-header-info">
+                <div class="chat-avatar">🤖</div>
+                <div>
+                    <h3>Culinary Assistant</h3>
+                    <div class="chat-status"><span class="status-dot"></span> Online</div>
+                </div>
+            </div>
+            <button class="close-chat" id="closeChat">✕</button>
+        </div>
+        <div class="chat-messages" id="chatMessages"></div>
+        <div class="chat-input">
+            <input type="text" id="chatInput" placeholder="Ask about dishes, diet tips...">
+            <button id="sendChat">➔</button>
+        </div>
+    </div>
+
+    <div class="notification" id="notification"></div>
+    <script src="script.js"></script>
+</body>
+
+</html>

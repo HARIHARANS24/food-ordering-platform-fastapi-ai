@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAVOR | Checkout</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header id="mainHeader">
+        <a href="index.html" class="logo"><span class="logo-icon">🍅</span> SAVOR<span class="dot">.</span></a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Menu</a></li>
+                <li><a href="about.html">Our Kitchen</a></li>
+                <li><a href="contact.html">Support</a></li>
+            </ul>
+        </nav>
+        <div class="header-actions">
+            <div class="cart-icon" id="cartIcon" style="visibility:hidden;">🛒 <span class="cart-count"
+                    id="cartCount">0</span></div>
+        </div>
+    </header>
+
+    <main>
+        <div style="padding:2rem 5% 1rem; max-width:1000px; margin:0 auto;">
+            <div style="display:flex; align-items:center; gap:0.75rem; margin-bottom:2rem;" class="fade-in-target">
+                <a href="index.html" style="color:var(--text-muted); font-size:0.875rem; text-decoration:none;">← Back
+                    to Menu</a>
+            </div>
+            <h1 style="font-family:'Playfair Display',serif; font-size:2rem; color:var(--text); margin-bottom:0.25rem;"
+                class="fade-in-target">Secure Checkout</h1>
+            <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:2rem;" class="fade-in-target">Review your
+                order and complete payment</p>
+        </div>
+
+        <div class="checkout-layout fade-in-target">
+            <!-- Payment Form -->
+            <div>
+                <div class="checkout-form-card" id="paymentSection">
+                    <h3 class="checkout-section-title">Payment Details</h3>
+                    <form id="paymentForm">
+                        <div class="form-group">
+                            <label>Cardholder Name</label>
+                            <input type="text" class="form-control" required placeholder="John Doe">
+                        </div>
+                        <div class="form-group">
+                            <label>Card Number</label>
+                            <input type="text" class="form-control" required placeholder="1234 5678 9012 3456"
+                                maxlength="19" id="cardNumInput">
+                        </div>
+                        <div style="display:flex; gap:1rem;">
+                            <div class="form-group" style="flex:1;">
+                                <label>Expiry Date</label>
+                                <input type="text" class="form-control" required placeholder="MM / YY" maxlength="7"
+                                    id="expiryInput">
+                            </div>
+                            <div class="form-group" style="flex:1;">
+                                <label>CVC</label>
+                                <input type="text" class="form-control" required placeholder="•••" maxlength="3">
+                            </div>
+                        </div>
+
+                        <div
+                            style="background:rgba(0,229,160,0.05); border:1px solid rgba(0,229,160,0.15); border-radius:10px; padding:0.75rem 1rem; margin-bottom:1.5rem; display:flex; align-items:center; gap:0.5rem; font-size:0.8rem; color:var(--secondary);">
+                            🔒 Your payment is encrypted and 100% secure
+                        </div>
+
+                        <button type="submit" class="btn btn-secondary"
+                            style="width:100%; font-size:1rem; padding:1rem;">
+                            Pay Now 🔐
+                        </button>
+                    </form>
+                </div>
+                <div id="paymentSuccess"></div>
+            </div>
+
+            <!-- Order Summary -->
+            <div>
+                <div class="checkout-summary-card">
+                    <h3 class="checkout-section-title">Order Summary</h3>
+                    <div id="checkoutItems"></div>
+                    <div class="checkout-total-row">
+                        <span class="checkout-total-label">Total to Pay</span>
+                        <span class="checkout-total-amount" id="checkoutTotal">$0.00</span>
+                    </div>
+                </div>
+
+                <div
+                    style="background:var(--card-bg); border:1px solid var(--glass-border); border-radius:var(--radius); padding:1.5rem; margin-top:1rem;">
+                    <div
+                        style="font-size:0.8rem; color:var(--text-muted); line-height:2; display:flex; flex-direction:column; gap:0.25rem;">
+                        <div style="display:flex; justify-content:space-between;"><span>Subtotal</span><span
+                                id="subtotalVal">$0.00</span></div>
+                        <div style="display:flex; justify-content:space-between;"><span>Delivery Fee</span><span
+                                style="color:var(--secondary);">FREE</span></div>
+                        <div style="display:flex; justify-content:space-between;"><span>Taxes (5%)</span><span
+                                id="taxVal">$0.00</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Chat -->
+    <button class="chat-fab" id="chatFab">💬</button>
+    <div class="chat-window" id="chatWindow">
+        <div class="chat-header">
+            <div class="chat-header-info">
+                <div class="chat-avatar">🤖</div>
+                <div>
+                    <h3>Culinary Assistant</h3>
+                    <div class="chat-status"><span class="status-dot"></span> Online</div>
+                </div>
+            </div>
+            <button class="close-chat" id="closeChat">✕</button>
+        </div>
+        <div class="chat-messages" id="chatMessages"></div>
+        <div class="chat-input">
+            <input type="text" id="chatInput" placeholder="Ask about dishes, diet tips...">
+            <button id="sendChat">➔</button>
+        </div>
+    </div>
+
+    <div class="notification" id="notification"></div>
+    <script src="script.js"></script>
+    <script>
+        // Card number formatting
+        document.getElementById('cardNumInput').addEventListener('input', function (e) {
+            let v = e.target.value.replace(/\D/g, '').substring(0, 16);
+            e.target.value = v.replace(/(.{4})/g, '$1 ').trim();
+        });
+        document.getElementById('expiryInput').addEventListener('input', function (e) {
+            let v = e.target.value.replace(/\D/g, '').substring(0, 4);
+            if (v.length > 2) v = v.substring(0, 2) + ' / ' + v.substring(2);
+            e.target.value = v;
+        });
+    </script>
+</body>
+
+</html>
